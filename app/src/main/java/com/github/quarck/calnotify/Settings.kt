@@ -48,7 +48,9 @@ data class NotificationSettingsSnapshot
         val useAlarmStream: Boolean,
         val useBundledNotifications: Boolean,
         val showDescription: Boolean,
-        val appendEmptyAction: Boolean
+        val appendEmptyAction: Boolean,
+        val notificationShowDefaultSnoozeAction: Boolean
+
 )
 
 class Settings(context: Context) : PersistentStorageBase(context) {
@@ -94,6 +96,10 @@ class Settings(context: Context) : PersistentStorageBase(context) {
     var notificationSwipeDoesSnooze: Boolean
         get() = getBoolean(NOTIFICATION_SWIPE_DOES_SNOOZE_KEY, false)
         set(value) = setBoolean(NOTIFICATION_SWIPE_DOES_SNOOZE_KEY, value)
+
+    var notificationShowDefaultSnoozeAction: Boolean
+        get() = getBoolean(NOTIFICATION_SHOW_DEFAULT_SNOOZE_ACTION, false)
+        set(value) = setBoolean(NOTIFICATION_SHOW_DEFAULT_SNOOZE_ACTION, value)
 
     val snoozeTapOpensCalendar: Boolean
         get() = getBoolean(OPEN_CALENDAR_FROM_SNOOZE_KEY, true)
@@ -448,7 +454,8 @@ class Settings(context: Context) : PersistentStorageBase(context) {
                 useAlarmStream = notificationUseAlarmStream,
                 useBundledNotifications = useBundledNotifications,
                 showDescription = showEventDescInTheNotification,
-                appendEmptyAction = notificationAddEmptyAction
+                appendEmptyAction = notificationAddEmptyAction,
+                notificationShowDefaultSnoozeAction = notificationShowDefaultSnoozeAction
         )
 
     companion object {
@@ -466,6 +473,7 @@ class Settings(context: Context) : PersistentStorageBase(context) {
         private const val REMINDER_SETTINGS_MIGRATED_TO_PATTERN_KEY = "reminder_pattern_settings_migrated"
 
         private const val NOTIFICATION_SWIPE_DOES_SNOOZE_KEY = "pref_key_enable_swipe_to_snooze"
+        private const val NOTIFICATION_SHOW_DEFAULT_SNOOZE_ACTION = "pref_key_notification_show_default_snooze_action"
 
         private const val RINGTONE_KEY = "pref_key_ringtone"
         private const val VIBRATION_ENABLED_KEY = "vibra_on"

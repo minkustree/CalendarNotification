@@ -543,5 +543,8 @@
     <string name="mute_tag">#mute</string>
     <string name="alarm_tag">#alarm</string>
 
+    <string name="show_default_snooze_button">Show default snooze button</string>
+    <string name="show_default_snooze_button_description">Show a button on each notification that will snooze for the default (1st) duration</string>
+
 </resources>
 
