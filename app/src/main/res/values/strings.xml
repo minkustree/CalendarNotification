@@ -348,6 +348,9 @@
     <string name="alarm_tag">#alarm</string>
     <string name="create_event">Create Event</string>
 
+    <string name="show_default_snooze_button">Show default snooze button</string>
+    <string name="show_default_snooze_button_description">Show a button on each notification that will snooze for the default (1st) duration</string>
+
     <string name="notification_channel_default">Calendar Events</string>
     <string name="notification_channel_default_desc">Default channel for calendar events</string>
     <string name="notification_channel_alarm">Alarm Notifications</string>

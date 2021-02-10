@@ -81,6 +81,13 @@
             android:defaultValue="false"  />
 
         <CheckBoxPreference
+            android:key="pref_key_notification_show_default_snooze_action"
+            android:title="@string/show_default_snooze_button"
+            android:summary="@string/show_default_snooze_button_description"
+            android:defaultValue="false"
+            />
+
+        <CheckBoxPreference
             android:key="pref_key_enable_swipe_to_snooze"
             android:title="@string/snooze_on_swipe"
             android:summary="@string/snooze_on_swipe_summary"

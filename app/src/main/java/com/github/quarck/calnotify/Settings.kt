@@ -84,7 +84,8 @@ data class NotificationBehaviorSettings (
         val notificationSwipeDoesSnooze: Boolean,
 
         val enableNotificationMute: Boolean,
-        val notificationOpensSnooze: Boolean
+        val notificationOpensSnooze: Boolean,
+        val showDefaultSnoozeAction : Boolean
 )
 
 data class NotificationSettings
@@ -300,7 +301,8 @@ class Settings(context: Context) : PersistentStorageBase(context) {
             allowNotificationSwipe = getBoolean(ALLOW_NOTIFICATION_SWIPE_KEY, false),
             notificationSwipeDoesSnooze = getBoolean(NOTIFICATION_SWIPE_DOES_SNOOZE_KEY, false),
             enableNotificationMute = getBoolean(ENABLE_NOTIFICATION_MUTE_KEY, true),
-            notificationOpensSnooze = !getBoolean(OPEN_CALENDAR_FROM_SNOOZE_KEY, true)
+            notificationOpensSnooze = !getBoolean(OPEN_CALENDAR_FROM_SNOOZE_KEY, true),
+            showDefaultSnoozeAction = getBoolean(NOTIFICATION_SHOW_DEFAULT_SNOOZE_ACTION, false)
         )
     }
 
@@ -440,6 +442,7 @@ class Settings(context: Context) : PersistentStorageBase(context) {
         private const val REMINDER_INTERVAL_PATTERN_KEY = "remind_interval_key_pattern" // "10m"
         private const val ALLOW_NOTIFICATION_SWIPE_KEY = "pref_key_enable_allow_swipe" // false
         private const val NOTIFICATION_SWIPE_DOES_SNOOZE_KEY = "pref_key_enable_swipe_to_snooze" // false
+        private const val NOTIFICATION_SHOW_DEFAULT_SNOOZE_ACTION = "pref_key_notification_show_default_snooze_action" // false
         private const val MAX_REMINDERS_KEY = "reminder_max_reminders" // 0 //
         private const val ENABLE_QUIET_HOURS_KEY = "enable_quiet_hours" // false
         private const val QUIET_HOURS_FROM_KEY = "quiet_hours_from" //1320

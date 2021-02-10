@@ -1215,9 +1215,13 @@ class EventNotificationManager : EventNotificationManagerInterface {
             extender.addAction(action)
         }
 
+
+        if (notificationSettings.behavior.showDefaultSnoozeAction) {
+            builder.addAction(defaultSnooze0Action)
+        }
+
         if (!notificationSettings.behavior.allowNotificationSwipe) {
             // swipe not allowed - show snooze and dismiss
-            builder.addAction(defaultSnooze0Action)
             builder.addAction(dismissAction)
         }
         else if (notificationSettings.behavior.notificationSwipeDoesSnooze) {
@@ -1227,7 +1231,6 @@ class EventNotificationManager : EventNotificationManagerInterface {
         }
         else {
             // swipe does dismiss
-            builder.addAction(defaultSnooze0Action)
             builder.setDeleteIntent(dismissPendingIntent)
         }
 
